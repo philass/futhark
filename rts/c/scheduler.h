@@ -100,6 +100,8 @@ static inline int scheduler_execute_task(struct scheduler *scheduler,
 #include <sys/sysinfo.h>
 #include <sys/resource.h>
 #include <signal.h>
+#elif defined(__EMSCRIPTEN__)
+#include <sys/resource.h>
 #endif
 
 /* Multicore Utility functions */

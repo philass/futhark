@@ -32,7 +32,7 @@ static int64_t get_wall_time_ns(void) {
   return time.tv_sec * 1000000000 + time.tv_nsec;
 }
 
-
+#ifndef __EMSCRIPTEN__
 static inline uint64_t rdtsc() {
   unsigned int hi, lo;
   __asm__ __volatile__("rdtsc" : "=a"(lo), "=d"(hi));
@@ -48,7 +48,7 @@ static inline void rdtsc_wait(uint64_t n) {
 static inline void spin_for(uint64_t nb_cycles) {
   rdtsc_wait(nb_cycles);
 }
-
+#endif
 
 #endif
 
