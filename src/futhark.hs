@@ -11,6 +11,7 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as T
 import qualified Futhark.CLI.Autotune as Autotune
 import qualified Futhark.CLI.Bench as Bench
+import qualified Futhark.CLI.Benchcmp as Benchcmp
 import qualified Futhark.CLI.C as C
 import qualified Futhark.CLI.CUDA as CCUDA
 import qualified Futhark.CLI.Check as Check
@@ -55,6 +56,7 @@ commands =
       ("pyopencl", (PyOpenCL.main, "Compile to Python calling PyOpenCL.")),
       ("test", (Test.main, "Test Futhark programs.")),
       ("bench", (Bench.main, "Benchmark Futhark programs.")),
+      ("benchcmp", (Benchcmp.main, "Compare Futhark benchmark files")),
       ("dataset", (Dataset.main, "Generate random test data.")),
       ("datacmp", (Datacmp.main, "Compare Futhark data files for equality.")),
       ("dataget", (Misc.mainDataget, "Extract test data.")),

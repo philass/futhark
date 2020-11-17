@@ -71,6 +71,7 @@ library
       Futhark.Binder.Class
       Futhark.CLI.Autotune
       Futhark.CLI.Bench
+      Futhark.CLI.Benchcmp
       Futhark.CLI.C
       Futhark.CLI.CUDA
       Futhark.CLI.Check
