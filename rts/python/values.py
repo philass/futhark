@@ -567,11 +567,10 @@ representation of the Futhark type."""
     if m:
         dims = int(len(m.group(1))/2)
         basetype = m.group(2)
-        assert basetype in FUTHARK_PRIMTYPES, "Unknown type: {}".format(type_desc)
-        if dims > 0:
-            return read_array(reader, basetype, dims)
-        else:
-            return read_scalar(reader, basetype)
+    assert m and basetype in FUTHARK_PRIMTYPES, "Unknown type: {}".format(type_desc)
+    if dims > 0:
+        return read_array(reader, basetype, dims)
+    else:
         return (dims, basetype)
 
 def end_of_input(entry, f=input_reader):
